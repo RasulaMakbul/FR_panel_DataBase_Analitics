@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -35,9 +36,11 @@ public class FXMLDocumentController implements Initializable {
         Parent ImportsceneParent = FXMLLoader.load(getClass().getResource("/importPage/fileImport.fxml"));
         Scene ImportScene= new Scene(ImportsceneParent);
         
-        Stage stage= new Stage();
-        stage.setScene(ImportScene);
-        stage.show();
+        Stage ImportStage= new Stage();
+        ImportStage.setScene(ImportScene);
+        //ImportStage.initModality(Modality.APPLICATION_MODAL);
+        ImportStage.show();
+        
     }
     
 }
